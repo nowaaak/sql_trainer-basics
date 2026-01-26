@@ -1,0 +1,11 @@
+{
+  "name": "sql_trainer-basics",
+  "author": "nowaaaak",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

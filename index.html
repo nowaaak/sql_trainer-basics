@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Trainer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="glass-card header-card">
+            <div class="logo">
+                <i class="fas fa-database"></i>
+                <h1>SQL Trainer</h1>
+                <span class="subtitle">This shit is totally vibe coded</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">0 / 0 gelöst</span>
+            </div>
+        </header>
+
+        <nav class="glass-card nav-card">
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab-btn active" data-category="all">
+                    <i class="fas fa-layer-group"></i>
+                    Alle
+                </button>
+                <button class="tab-btn" data-category="ddl">
+                    <i class="fas fa-table"></i>
+                    DDL
+                </button>
+                <button class="tab-btn" data-category="dml">
+                    <i class="fas fa-edit"></i>
+                    DML
+                </button>
+                <button class="tab-btn" data-category="dql">
+                    <i class="fas fa-search"></i>
+                    DQL
+                </button>
+                <button class="tab-btn" data-category="joins">
+                    <i class="fas fa-link"></i>
+                    JOINs
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <aside class="glass-card exercise-list-card">
+                <h2><i class="fas fa-list"></i> Übungen</h2>
+                <div class="exercise-list" id="exerciseList"></div>
+            </aside>
+
+            <section class="glass-card exercise-card">
+                <div class="exercise-header">
+                    <span class="exercise-badge" id="exerciseBadge">DDL</span>
+                    <span class="difficulty" id="difficultyBadge">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </span>
+                </div>
+
+                <h2 class="exercise-title" id="exerciseTitle">Wähle eine Übung</h2>
+
+                <div class="exercise-nav" id="exerciseNav" style="display: none;">
+                    <button class="btn btn-secondary btn-nav" id="prevExerciseBtn">
+                        <i class="fas fa-arrow-left"></i> Zurück
+                    </button>
+                    <span class="exercise-nav-text" id="exerciseNavText"></span>
+                    <button class="btn btn-secondary btn-nav" id="nextExerciseBtnInline">
+                        Weiter <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="exercise-description" id="exerciseDescription">
+                    <p>Wähle links eine Übung aus, um zu beginnen.</p>
+                </div>
+
+                <div class="schema-section" id="schemaSection" style="display: none;">
+                    <h3><i class="fas fa-project-diagram"></i> Datenbankschema</h3>
+                    <div class="schema-display" id="schemaDisplay"></div>
+                </div>
+
+                <div class="editor-section">
+                    <h3><i class="fas fa-code"></i> SQL Query</h3>
+                    <div class="editor-container">
+                        <textarea id="sqlEditor" placeholder="Schreibe hier deine SQL-Abfrage..." spellcheck="false"></textarea>
+                        <div class="editor-actions">
+                            <button class="btn btn-secondary" id="clearBtn">
+                                <i class="fas fa-eraser"></i> Leeren
+                            </button>
+                            <button class="btn btn-primary" id="submitBtn">
+                                <i class="fas fa-play"></i> Ausführen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-section" id="feedbackSection" style="display: none;">
+                    <div class="feedback-card" id="feedbackCard">
+                        <div class="feedback-icon" id="feedbackIcon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feedback-content">
+                            <h4 id="feedbackTitle">Feedback</h4>
+                            <p id="feedbackMessage"></p>
+                            <div class="hints-section" id="hintsSection" style="display: none;">
+                                <button class="btn btn-hint" id="showHintBtn">
+                                    <i class="fas fa-lightbulb"></i> Hinweis anzeigen
+                                </button>
+                                <div class="hint-text" id="hintText" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="glass-card footer-card">
+            <p>SQL Trainer für LF08 Klausurvorbereitung</p>
+            <div class="footer-links">
+                <a href="#" id="resetProgress"><i class="fas fa-redo"></i> Fortschritt zurücksetzen</a>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content glass-card">
+            <div class="modal-icon success">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2>Großartig!</h2>
+            <p>Du hast die Aufgabe erfolgreich gelöst!</p>
+            <button class="btn btn-primary" id="nextExerciseBtn">
+                <i class="fas fa-arrow-right"></i> Nächste Übung
+            </button>
+        </div>
+    </div>
+
+    <script src="exercises.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
