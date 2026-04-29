@@ -1,0 +1,410 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ──────────────────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.logo svg {
+  color: var(--color-accent);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ─── Hero ────────────────────────────────────────────────────────────────── */
+.hero {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6) var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent-glow);
+}
+
+.headline {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--color-text);
+}
+
+.headlineAccent {
+  color: var(--color-accent);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 44ch;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px var(--color-accent-glow);
+}
+
+.ctaPrimary:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px var(--color-accent-glow);
+}
+
+.ctaPrimary:active {
+  transform: translateY(0);
+}
+
+/* ─── Code card ───────────────────────────────────────────────────────────── */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.codeCard {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.codeCardDots {
+  display: flex;
+  gap: 6px;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.codeCardDots span {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-border-strong);
+}
+
+.codeCardDots span:nth-child(1) { background: #f87171; }
+.codeCardDots span:nth-child(2) { background: #fbbf24; }
+.codeCardDots span:nth-child(3) { background: #2dd4bf; }
+
+.code {
+  padding: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* ─── Stats ───────────────────────────────────────────────────────────────── */
+.stats {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.statsInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.statDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Features ────────────────────────────────────────────────────────────── */
+.features {
+  padding: var(--space-16) 0;
+}
+
+.featuresInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.featureCard {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color var(--transition-base);
+}
+
+.featureCard:hover {
+  border-color: var(--color-accent-glow);
+}
+
+.featureIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.featureDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ─── Footer ──────────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-5) var(--space-6);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer p {
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+}
+
+.footerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerBrand {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-base);
+}
+
+.footerBrand:hover {
+  color: var(--color-accent);
+}
+
+.footerLink {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-base);
+}
+
+.footerLink:hover {
+  color: var(--color-accent);
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: var(--space-10);
+    gap: var(--space-8);
+  }
+
+  .heroVisual {
+    order: -1;
+  }
+
+  .codeCard {
+    max-width: 100%;
+  }
+
+  .statsInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuresInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: var(--space-8) var(--space-4) var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .headline {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .code {
+    font-size: 0.72rem;
+    padding: var(--space-4);
+  }
+
+  .statsInner {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-5) var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .statValue {
+    font-size: 1.6rem;
+  }
+
+  .features {
+    padding: var(--space-8) 0;
+  }
+
+  .featuresInner {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .featureCard {
+    padding: var(--space-4);
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+    padding: var(--space-4);
+  }
+
+  .footerMeta {
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .headerInner {
+    padding: 0 var(--space-4);
+  }
+
+  .ctaPrimary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,21 +1,35 @@
-# SQL Trainer (LF08)
-A small, browser-based SQL practice app for the LF08 exam topics.
+# SQL Trainer
+
+A modern SQL practice app built with Next.js 15, TypeScript, and CSS Modules.
 
 ## What it does
-- Offers categorized SQL exercises (DDL, DML, DQL, JOINs)
-- Checks answers with keyword-based validation
-- Tracks progress in local storage
 
-## How to run
-1. Open `index.html` in your browser.
-2. Pick a category and an exercise.
-3. Write your SQL and press Run.
+- offers hands-on SQL exercises across DDL, DML, DQL, and JOIN topics
+- validates answers with lightweight SQL checks and guided feedback
+- supports light mode, dark mode, and German/English UI switching
+- stores training progress locally in the browser
 
-## Files
-- `index.html` – UI layout
-- `styles.css` – styling
-- `app.js` – app logic
-- `exercises.js` – exercise data
+## Getting started
 
+```bash
+npm install
+npm run dev
+```
 
-THIS PIECE OF SHIT IS TOTALLY VIBE CODED SO DONT EXPECT TO MUCH
+Open `http://localhost:3000`.
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run start
+```
+
+## Project structure
+
+- `src/app` – app routes, layout, global styles
+- `src/components` – reusable UI and trainer components
+- `src/data` – exercise data and shared types
+- `src/hooks` – local progress, locale, and trainer state
+- `src/lib` – SQL validation and i18n helpers

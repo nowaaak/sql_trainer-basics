@@ -1,11 +1,25 @@
 {
-  "name": "sql_trainer-basics",
-  "author": "nowaaaak",
+  "name": "sql-trainer",
+  "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "scripts": {
+    "check": "tsc --noEmit",
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "bunx --bun eslint . --ext .js,.jsx,.ts,.tsx",
+    "start": "next start"
   },
-  "peerDependencies": {
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.3.0",
     "typescript": "^5"
   }
 }

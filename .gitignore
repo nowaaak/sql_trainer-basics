@@ -1,8 +1,11 @@
-# dependencies (bun install)
+# dependencies
 node_modules
 
-# output
+# Next.js
+.next
 out
+
+# output
 dist
 *.tgz
 
